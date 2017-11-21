@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Christian Wagner, Neil Mehta 
 // 
-// Create Date:    15:43:18 11/09/2016 
+// Create Date:    11/30/16
 // Design Name: 
 // Module Name:    user_input 
 // Project Name: 

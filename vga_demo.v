@@ -1,7 +1,8 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// VGA verilog template
-// Author:  Da Cheng
+// Final 
+// Author: Christian Wagner, Neil Mehta 
+// Date: 11/30/16
 //////////////////////////////////////////////////////////////////////////////////
 module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r_0, vga_g_0, vga_b_0, vga_r_1, vga_g_1, vga_b_1, vga_r_2, vga_g_2, Sw0, Sw1, Sw2, Sw3, Sw4, Sw5, Sw6, Sw7, btnU, btnD, btnL, btnR, btnC,
 	St_ce_bar, St_rp_bar, Mt_ce_bar, Mt_St_oe_bar, Mt_St_we_bar,
@@ -89,27 +90,6 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r_0, vga_g_0, vga_b_0, vga_
 	reg [11:0] wall     = 0;
 	reg [11:0] pos_reward = 0;
 	reg [11:0] neg_reward = 0;
-		/*	
-	reg [11:0] f_zeros_1   = 0;
-	reg [11:0] f_zeros_4   = 0; 
-	reg [11:0] f_zeros_5   = 0; 
-	reg [11:0] f_negs      = 0; 
-	reg [11:0] f_ones_1    = 0;
-	reg [11:0] f_ones_4    = 0;
-	reg [11:0] f_twos      = 0;
-	reg [11:0] f_threes    = 0;
-	reg [11:0] f_fours     = 0;
-	reg [11:0] f_fives_4   = 0;
-	reg [11:0] f_fives_5   = 0;
-	reg [11:0] f_sixes     = 0;
-	reg [11:0] f_sevens    = 0;
-	reg [11:0] f_eights    = 0;
-	reg [11:0] f_nines     = 0;
-	reg [11:0] f_dots      = 0;
-	reg [11:0] f_policy_up = 0;
-	reg [11:0] f_policy_rt = 0;
-	reg [11:0] f_policy_dn = 0;
-	reg [11:0] f_policy_lt = 0; */ 
 	
 //--------------------------------------------------------------------------------------------
 //--------------------------------- instantionations -----------------------------------------
@@ -470,11 +450,6 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r_0, vga_g_0, vga_b_0, vga_
 	//////////////  	  LD control starts here 	 ///////////////////
 	/////////////////////////////////////////////////////////////////
 
-
-	
-	
-		
-		
 	wire LD0, LD1, LD2, LD3, LD4, LD5, LD6, LD7;
 	
 	assign LD0 = 0;

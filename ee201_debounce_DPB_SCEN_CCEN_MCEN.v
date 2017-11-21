@@ -98,7 +98,7 @@ output DPB;
 output SCEN, MCEN, CCEN;
 
 //parameters
-parameter N_dc = 5;
+parameter N_dc = 2;
 
 //local variables
 // the next line is an attribute specification allowed by Verilog 2001. 

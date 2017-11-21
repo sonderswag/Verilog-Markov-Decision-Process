@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Christian Wagner, Neil Mehta 
 // 
-// Create Date:    16:06:52 11/16/2016 
+// Create Date:   11/30/16
 // Design Name: 
 // Module Name:    fp_double_adder 
 // Project Name: 

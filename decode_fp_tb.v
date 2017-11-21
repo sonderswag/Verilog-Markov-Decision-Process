@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    17:39:52 11/18/2016 
+// Create Date:    12:01:54 11/24/2016 
 // Design Name: 
-// Module Name:    fp_double_adder_tb 
+// Module Name:    fp_single_multiplier_tb 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,34 +18,29 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module fp_double_adder_tb(
+module decode_fp_tb(
     );
-
 
 //Inputs
 reg sys_clk_tb;
 reg Reset_tb;
 reg start_tb; 
-wire done_tb; 
-reg [15:0] a_input; 
-reg [15:0] b_input;
-reg [15:0] c_input;
-
+reg [15:0] fp_in_tb; 
+reg Ack_tb; 
 //Outputs 
-wire [15:0] z_out; 
-wire Z_ack_out;
+wire [3:0] Decode_1_tb, Decode_2_tb; 
+wire done_tb;
 
- fp_double_adder UUT(
-	.start(start_tb),
-	.reset(Reset_tb),
-	.input_a(a_input), 
-	.input_b(b_input),
-	.input_c(c_input),
-	.output_z(z_out),
-	.clk(sys_clk_tb),
-	.ack(Z_ack_out),
-	.done(done_tb)
-	);
+decode_fp UUT(
+	.Reset(Reset_tb), 
+	.Clk(sys_clk_tb), 
+	.Start(start_tb), 
+	.Ack(Ack_tb), 
+	.Fp_in(fp_in_tb), 
+	.Done(done_tb), 
+	.Decode_1(Decode_1_tb),
+	.Decode_2(Decode_2_tb)
+	); 
 integer  Clk_cnt;
 
 `define CLK_PERIOD 20
@@ -79,17 +74,19 @@ initial
  
 //apply stimulous 
 initial begin 
-a_input = 16'b1011000111000010; //.18
-//a_input = 32'b10111111000000000000000000000000; //-.5
-//b_input = 32'b10111111000000000000000000000000; //-.5
-//c_input = 32'b00111111100000000000000000000000; //1
-//a_input = 32'b00000000000000000000000000000000;
-b_input = 16'b1011001001100110; //.2
-c_input = 16'b1011100000000000; //-.5 
+fp_in_tb = 16'b0011100100100000; //.2
+@(posedge sys_clk_tb) 
+@(posedge sys_clk_tb)
+@(posedge sys_clk_tb) 
+@(posedge sys_clk_tb)
+@(posedge sys_clk_tb) 
+@(posedge sys_clk_tb)
 start_tb = 1; 
+Ack_tb <= 0;
 @(posedge sys_clk_tb) 
 @(posedge sys_clk_tb)
 start_tb = 0 ;
 
  end 
 endmodule
+
